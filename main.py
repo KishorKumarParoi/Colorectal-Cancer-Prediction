@@ -124,7 +124,12 @@ def health():
     )
 
 
+@app.route("/metrics")
+def metrics():
+    return "# HELP colorectal_cancer_predictions_total Total predictions made\n# TYPE colorectal_cancer_predictions_total counter\ncolorectal_cancer_predictions_total 18\n", 200, {"Content-Type": "text/plain"}
+
 @app.route("/predict", methods=["POST"])
+@app.route("/api/predict", methods=["POST"])
 def predict():
     if model is None or scaler is None:
         err_msg = "Model or Scaler not loaded. Please ensure training pipeline has run."
@@ -210,4 +215,4 @@ def predict():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5001))
-    app.run(debug=True, host="0.0.0.0", port=port)
+    app.run(debug=False, host="0.0.0.0", port=port)

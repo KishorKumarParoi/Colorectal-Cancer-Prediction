@@ -6,8 +6,11 @@ from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score
 from src.logger import get_logger
 from src.custom_exception import CustomException
 
-import mlflow
-import mlflow.sklearn
+try:
+    import mlflow
+    import mlflow.sklearn
+except ImportError:
+    mlflow = None
 
 logger = get_logger(__name__)
 
@@ -55,18 +58,19 @@ class ModelTraining:
             recall = recall_score(self.y_test , y_pred,  average="weighted")
             f1 = f1_score(self.y_test , y_pred,  average="weighted")
 
-            mlflow.log_metric("accuracy" , accuracy)
-            mlflow.log_metric("Precison" , precision)
-            mlflow.log_metric("Recall Score " , recall)
-            mlflow.log_metric("F1_score" , f1)
+            if mlflow is not None:
+                mlflow.log_metric("accuracy" , accuracy)
+                mlflow.log_metric("Precison" , precision)
+                mlflow.log_metric("Recall Score " , recall)
+                mlflow.log_metric("F1_score" , f1)
 
             logger.info(f"Accuracy : {accuracy} ; Precision : {precision} ; Recall : {recall} ; F1-Score : {f1}")
 
-            roc_auc = roc_auc_score(self.y_test , y_proba)
-            mlflow.log_metric("ROC-AUC" , roc_auc)
-
-
-            logger.info(f"ROC-AUC Score : {roc_auc}")
+            if len(self.y_test.unique()) == 2 and y_proba is not None:
+                roc_auc = roc_auc_score(self.y_test , y_proba)
+                if mlflow is not None:
+                    mlflow.log_metric("ROC-AUC" , roc_auc)
+                logger.info(f"ROC-AUC Score : {roc_auc}")
 
             logger.info("Model evaluation done...")
 
@@ -80,6 +84,9 @@ class ModelTraining:
         self.evaluate_model()
 
 if __name__=="__main__":
-    with mlflow.start_run():
-        trainer = ModelTraining()
+    trainer = ModelTraining()
+    if mlflow is not None:
+        with mlflow.start_run():
+            trainer.run()
+    else:
         trainer.run()   

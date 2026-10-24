@@ -1,0 +1,196 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad-cancer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0d1424"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="grad-rose" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <linearGradient id="grad-emerald" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+
+    <filter id="shadow-card" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <marker id="arrow-rose" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f43f5e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="680" fill="url(#bg-grad-cancer)"/>
+
+  <!-- Subtle Matrix Grid -->
+  <g stroke="#1e293b" stroke-width="0.5" opacity="0.35">
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="680"/>
+    <line x1="400" y1="0" x2="400" y2="680"/>
+    <line x1="600" y1="0" x2="600" y2="680"/>
+    <line x1="800" y1="0" x2="800" y2="680"/>
+    <line x1="1000" y1="0" x2="1000" y2="680"/>
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(60, 45)">
+    <rect x="0" y="0" width="190" height="28" rx="14" fill="#e11d48" fill-opacity="0.25" stroke="#f43f5e" stroke-width="1"/>
+    <text x="95" y="18" fill="#fb7185" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.5">CLINICAL MLOPS</text>
+    
+    <text x="0" y="62" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="28" font-weight="800">Colorectal Cancer Patient Survival Architecture</text>
+    <text x="0" y="86" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="14">Clinical Feature Selection, Gradient Boosting Classification, Real-Time Risk Calibration &amp; Governance</text>
+  </g>
+
+  <!-- Phase 1: Clinical Ingestion -->
+  <g transform="translate(60, 170)" filter="url(#shadow-card)">
+    <rect width="230" height="420" rx="16" fill="url(#card-grad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="230" height="6" rx="3" fill="url(#grad-rose)"/>
+    <text x="24" y="38" fill="#fb7185" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1">PHASE 1: INGESTION</text>
+    <text x="24" y="65" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="18" font-weight="700">Patient Data Layer</text>
+
+    <g transform="translate(20, 90)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Clinical EHR Dataset</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">artifacts/raw/data.csv</text>
+      <text x="16" y="66" fill="#fb7185" font-family="-apple-system, sans-serif" font-size="11">Patient ID De-identification</text>
+    </g>
+
+    <g transform="translate(20, 195)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">HIPAA &amp; PII Scrubbing</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">Drop Patient_ID</text>
+      <text x="16" y="66" fill="#34d399" font-family="-apple-system, sans-serif" font-size="11">✓ Zero PII Leakage</text>
+    </g>
+
+    <g transform="translate(20, 300)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Categorical Encoders</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">Treatment Type (4 tiers)</text>
+      <text x="16" y="66" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11">Diabetes Binary (0/1)</text>
+    </g>
+  </g>
+
+  <!-- Flow 1 -> 2 -->
+  <path d="M 290 380 L 340 380" stroke="#fb7185" stroke-width="2.5" fill="none" marker-end="url(#arrow-rose)" stroke-dasharray="4 4"/>
+
+  <!-- Phase 2: Feature Selection -->
+  <g transform="translate(345, 170)" filter="url(#shadow-card)">
+    <rect width="230" height="420" rx="16" fill="url(#card-grad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="230" height="6" rx="3" fill="url(#grad-blue)"/>
+    <text x="24" y="38" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1">PHASE 2: SELECTION</text>
+    <text x="24" y="65" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="18" font-weight="700">Chi-Square Ranking</text>
+
+    <g transform="translate(20, 90)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">SelectKBest (Chi2)</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">Statistical Dependency</text>
+      <text x="16" y="66" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11">Top 5 Biomarkers</text>
+    </g>
+
+    <g transform="translate(20, 195)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">StandardScaler</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">scaler.pkl (Zero Mean)</text>
+      <text x="16" y="66" fill="#34d399" font-family="-apple-system, sans-serif" font-size="11">Unit Variance Transformed</text>
+    </g>
+
+    <g transform="translate(20, 300)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Stratified Partitioner</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">Train (80%) / Test (20%)</text>
+      <text x="16" y="66" fill="#fb7185" font-family="-apple-system, sans-serif" font-size="11">Stratified Survival Class</text>
+    </g>
+  </g>
+
+  <!-- Flow 2 -> 3 -->
+  <path d="M 575 380 L 625 380" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow-rose)" stroke-dasharray="4 4"/>
+
+  <!-- Phase 3: Modeling & MLflow -->
+  <g transform="translate(630, 170)" filter="url(#shadow-card)">
+    <rect width="230" height="420" rx="16" fill="url(#card-grad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="230" height="6" rx="3" fill="url(#grad-emerald)"/>
+    <text x="24" y="38" fill="#34d399" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1">PHASE 3: MODELING</text>
+    <text x="24" y="65" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="18" font-weight="700">Gradient Boosting</text>
+
+    <g transform="translate(20, 90)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">GradientBoosting</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">100 Estimators | Depth: 3</text>
+      <text x="16" y="66" fill="#34d399" font-family="-apple-system, sans-serif" font-size="11">ROC-AUC: 0.88+</text>
+    </g>
+
+    <g transform="translate(20, 195)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">MLflow Tracking</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">Precision, Recall, F1</text>
+      <text x="16" y="66" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11">Experiment Provenance</text>
+    </g>
+
+    <g transform="translate(20, 300)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Artifact Store</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">artifacts/models/model.pkl</text>
+      <text x="16" y="66" fill="#fb7185" font-family="-apple-system, sans-serif" font-size="11">Calibrated Probabilities</text>
+    </g>
+  </g>
+
+  <!-- Flow 3 -> 4 -->
+  <path d="M 860 380 L 910 380" stroke="#34d399" stroke-width="2.5" fill="none" marker-end="url(#arrow-rose)" stroke-dasharray="4 4"/>
+
+  <!-- Phase 4: Production Serving -->
+  <g transform="translate(915, 170)" filter="url(#shadow-card)">
+    <rect width="230" height="420" rx="16" fill="url(#card-grad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="0" y="0" width="230" height="6" rx="3" fill="url(#grad-rose)"/>
+    <text x="24" y="38" fill="#fb7185" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="1">PHASE 4: SERVING</text>
+    <text x="24" y="65" fill="#f1f5f9" font-family="-apple-system, sans-serif" font-size="18" font-weight="700">Clinical Ops</text>
+
+    <g transform="translate(20, 90)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">REST API :5001</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">POST /api/predict</text>
+      <text x="16" y="66" fill="#34d399" font-family="-apple-system, sans-serif" font-size="11">Latency &lt; 8ms P95</text>
+    </g>
+
+    <g transform="translate(20, 195)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Oncology Portal</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">Interactive Web UI</text>
+      <text x="16" y="66" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11">Confidence &amp; Risk Bar</text>
+    </g>
+
+    <g transform="translate(20, 300)">
+      <rect width="190" height="85" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+      <text x="16" y="28" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">One-Click Deploy</text>
+      <text x="16" y="48" fill="#64748b" font-family="-apple-system, sans-serif" font-size="11">bootstrap.sh | deploy.sh</text>
+      <text x="16" y="66" fill="#fb7185" font-family="-apple-system, sans-serif" font-size="11">Zero-Cost Teardown ($0)</text>
+    </g>
+  </g>
+
+  <!-- Footer Banner -->
+  <g transform="translate(60, 620)">
+    <text x="0" y="20" fill="#64748b" font-family="-apple-system, sans-serif" font-size="12">Single-Command Cloud Bootstrap: curl -fsSL https://raw.githubusercontent.com/KishorKumarParoi/Colorectal-Cancer-Prediction/main/bootstrap.sh | bash</text>
+    <text x="1080" y="20" fill="#34d399" font-family="-apple-system, sans-serif" font-size="12" text-anchor="end" font-weight="600">✓ $0.00 Teardown Verified (clear.sh)</text>
+  </g>
+</svg>

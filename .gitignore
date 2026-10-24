@@ -120,6 +120,8 @@ datasets/
 *.ckpt
 *.h5
 *.pkl
+!artifacts/models/model.pkl
+!artifacts/processed/scaler.pkl
 *.joblib
 models/
 checkpoints/
